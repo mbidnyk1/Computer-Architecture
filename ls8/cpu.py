@@ -63,4 +63,17 @@ class CPU:
 
     def run(self):
         """Run the CPU."""
-        if self.ram[0]
+        if len(sys.argv) != 2:
+    print("usage: comp.py filename")
+    sys.exit(1)
+​
+try:
+    with open(sys.argv[1]) as f:
+        for line in f:
+            try:
+                line = line.split("#",1)[0]
+                line = int(line, 10)  # int() is base 10 by default
+                memory[address] = line
+                address += 1
+            except ValueError:
+
